@@ -1,0 +1,25 @@
+{
+  "name": "pg-get-post-activity-master",
+  "version": "1.0.0",
+  "description": "``` ,________,         .------,          .------,         .------. |________|       ,'_____,'|        ,'_____,'|        (        ) |        |       |      | |        | ____ | |        |~------~| |        |       |      | |        | ____ | |        |~------~| |        |       |      | ;        | ____ | ;        |~------~| |________|       |______|'         |______|'         `.______.'  HTML/CSS          jQuery        Node / Express      PostgreSQL ``` Let's build a basic bookstore!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinanderson7/pg-get-post-bookstore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinanderson7/pg-get-post-bookstore/issues"
+  },
+  "homepage": "https://github.com/kevinanderson7/pg-get-post-bookstore#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  }
+}
