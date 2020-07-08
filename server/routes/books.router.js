@@ -26,4 +26,23 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+router.post('/', (req, res) => {
+  console.log(`In /books POST with`, req.body);
+
+  const bookToAdd = req.body;
+  const queryText = `INSERT INTO "books" ("title", "author", "published")
+                      VALUES ($1, $2, $3);`;
+  pool
+    .query(queryText, [bookToAdd.title, bookToAdd.author, bookToAdd.published])
+    .then((responseFromDatabase) => {
+      console.log(responseFromDatabase);
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.log(`Error in POST /books ${error}`);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

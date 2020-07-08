@@ -7,6 +7,7 @@ function onReady() {
 
 function clickSubmitBook() {
   console.log('clicking Submit Book');
+  sendBookToServer();
 }
 
 function sendBookToServer() {
@@ -41,6 +42,12 @@ function getBookData() {
     .then(function (response) {
       const listOfBooks = response;
       console.log('server response:', response);
+
+      $('#book-title').val('');
+      $('#book-author').val('');
+      $('#book-published').val('');
+
+      $('#bookTableBody').empty();
       for (let book of listOfBooks) {
         $('#bookTableBody').append(`
         <tr>
