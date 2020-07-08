@@ -2,6 +2,7 @@ $(document).ready(onReady);
 
 function onReady() {
   $('#submit-book').on('click', clickSubmitBook);
+  getBookData();
 }
 
 function clickSubmitBook() {
@@ -25,6 +26,7 @@ function sendBookToServer() {
   })
     .then(function (response) {
       console.log(response);
+      getBookData();
     })
     .catch(function (error) {
       console.log('error in book post', error);
@@ -42,9 +44,9 @@ function getBookData() {
       for (let book of listOfBooks) {
         $('#bookTableBody').append(`
         <tr>
-        <td>${artist.artist_name}</td>
-        <td>${artist.year_born}</td>
-        <td>${artist.home_town}</td>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.published}</td>
       </tr>`);
       }
     })
