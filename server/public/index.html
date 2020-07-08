@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookstore Database</title>
+
+    <script src="vendors/jquery.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <h1>Bookstore Database</h1>
+
+    <h2>Books</h2>
+    <input type="text" id="book-title" placeholder="Title" />
+    <input type="text" id="book-author" placeholder="Author" />
+    <input type="text" id="book-published" placeholder="Publishing Date" />
+    <button id="submit-book">Submit Book</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Publishing Date</th>
+        </tr>
+      </thead>
+      <tbody id="bookTableBody">
+        <!-- Append artists here -->
+      </tbody>
+    </table>
+  </body>
+</html>
