@@ -11,7 +11,7 @@ td {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(216, 185, 174);
+  background-color: rgb(230, 201, 190);
 }
 .backgroundImage {
   background-image: url('books-image.jpg');
@@ -19,6 +19,7 @@ body {
   background-position: center center;
   opacity: 0.8;
   margin-bottom: 10px;
+  border: 1px solid gray;
 }
 
 .bookstoreTitle {
@@ -26,4 +27,21 @@ body {
 }
 .bodyContainer {
   margin: 15px;
+}
+
+input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-bottom: 4px;
+}
+
+h2 {
+  display: inline-block;
+}
+
+table {
+  margin-top: 20px;
 }

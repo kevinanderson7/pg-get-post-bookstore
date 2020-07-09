@@ -27,7 +27,7 @@ function sendBookToServer() {
   };
   console.log(bookToSend);
   if ((bookToSend.title || bookToSend.author || bookToSend.published) === '') {
-    alert('please fill in missing book fields');
+    alert('Please fill in missing book fields');
   } else {
     $.ajax({
       method: 'POST',
@@ -113,7 +113,7 @@ function sendMagazineToServer() {
       magazineToSend.issue_number ||
       magazineToSend.pages) === ''
   ) {
-    alert('Please fill in missing inputs');
+    alert('Please fill in missing magazine fields');
   } else {
     console.log(magazineToSend);
 
