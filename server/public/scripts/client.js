@@ -26,19 +26,22 @@ function sendBookToServer() {
     published: $('#book-published').val(),
   };
   console.log(bookToSend);
-
-  $.ajax({
-    method: 'POST',
-    url: '/books',
-    data: bookToSend,
-  })
-    .then(function (response) {
-      console.log(response);
-      getBookData();
+  if ((bookToSend.title || bookToSend.author || bookToSend.published) === '') {
+    alert('please fill in missing book fields');
+  } else {
+    $.ajax({
+      method: 'POST',
+      url: '/books',
+      data: bookToSend,
     })
-    .catch(function (error) {
-      console.log('error in book post', error);
-    });
+      .then(function (response) {
+        console.log(response);
+        getBookData();
+      })
+      .catch(function (error) {
+        console.log('error in book post', error);
+      });
+  }
 }
 
 function getBookData() {
@@ -105,18 +108,26 @@ function sendMagazineToServer() {
     issue_number: $('#magazine-issue').val(),
     pages: $('#magazine-pages').val(),
   };
-  console.log(magazineToSend);
+  if (
+    (magazineToSend.title ||
+      magazineToSend.issue_number ||
+      magazineToSend.pages) === ''
+  ) {
+    alert('Please fill in missing inputs');
+  } else {
+    console.log(magazineToSend);
 
-  $.ajax({
-    method: 'POST',
-    url: '/magazines',
-    data: magazineToSend,
-  })
-    .then(function (response) {
-      console.log(response);
-      getMagazineData();
+    $.ajax({
+      method: 'POST',
+      url: '/magazines',
+      data: magazineToSend,
     })
-    .catch(function (error) {
-      console.log('error in magazine post', error);
-    });
+      .then(function (response) {
+        console.log(response);
+        getMagazineData();
+      })
+      .catch(function (error) {
+        console.log('error in magazine post', error);
+      });
+  }
 }

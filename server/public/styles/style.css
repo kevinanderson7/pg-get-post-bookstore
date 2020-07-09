@@ -11,14 +11,14 @@ td {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(237, 202, 190);
+  background-color: rgb(216, 185, 174);
 }
 .backgroundImage {
   background-image: url('books-image.jpg');
   background-size: cover;
   background-position: center center;
   opacity: 0.8;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .bookstoreTitle {
