@@ -2,12 +2,19 @@ $(document).ready(onReady);
 
 function onReady() {
   $('#submit-book').on('click', clickSubmitBook);
+  $('#submit-magazine').on('click', clickSubmitMagazine);
   getBookData();
+  getMagazineData();
 }
 
 function clickSubmitBook() {
   console.log('clicking Submit Book');
   sendBookToServer();
+}
+
+function clickSubmitMagazine() {
+  console.log('clicking Submit Magazine');
+  sendMagazineToServer();
 }
 
 function sendBookToServer() {
@@ -59,5 +66,57 @@ function getBookData() {
     })
     .catch(function (error) {
       console.log('error in book get', error);
+    });
+}
+
+function getMagazineData() {
+  $.ajax({
+    method: 'GET',
+    url: '/magazines',
+  })
+    .then(function (response) {
+      const listOfMagazines = response;
+      console.log('server response:', response);
+
+      $('#magazine-title').val('');
+      $('#magazine-issue').val('');
+      $('#magazine-pages').val('');
+
+      $('#magazineTableBody').empty();
+      for (let magazine of listOfMagazines) {
+        $('#magazineTableBody').append(`
+          <tr>
+          <td>${magazine.title}</td>
+          <td>${magazine.issue_number}</td>
+          <td>${magazine.pages}</td>
+        </tr>`);
+      }
+    })
+    .catch(function (error) {
+      console.log('error in magazine get', error);
+    });
+}
+
+function sendMagazineToServer() {
+  console.log('in function sendMagazineToServer');
+
+  const magazineToSend = {
+    title: $('#magazine-title').val(),
+    issue_number: $('#magazine-issue').val(),
+    pages: $('#magazine-pages').val(),
+  };
+  console.log(magazineToSend);
+
+  $.ajax({
+    method: 'POST',
+    url: '/magazines',
+    data: magazineToSend,
+  })
+    .then(function (response) {
+      console.log(response);
+      getMagazineData();
+    })
+    .catch(function (error) {
+      console.log('error in magazine post', error);
     });
 }
