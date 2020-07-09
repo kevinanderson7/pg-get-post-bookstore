@@ -8,44 +8,64 @@
 
     <script src="vendors/jquery.min.js"></script>
     <script src="scripts/client.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
+
   <body>
-    <h1>Bookstore Database</h1>
+    <div class="jumbotron backgroundImage"></div>
+    <h1 class="bookstoreTitle">Bookstore Database</h1>
+    <div class="bodyContainer">
+      <h2>Books</h2>
+      <input type="text" id="book-title" placeholder="Title" />
+      <input type="text" id="book-author" placeholder="Author" />
+      <input type="text" id="book-published" placeholder="Publishing Date" />
+      <button type="button" class="btn btn-outline-primary" id="submit-book">
+        Submit Book
+      </button>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Publishing Date</th>
+            </tr>
+          </thead>
+          <tbody id="bookTableBody"></tbody>
+        </table>
+      </div>
+      <br />
+      <hr />
+      <h2>Magazines</h2>
 
-    <h2>Books</h2>
-    <input type="text" id="book-title" placeholder="Title" />
-    <input type="text" id="book-author" placeholder="Author" />
-    <input type="text" id="book-published" placeholder="Publishing Date" />
-    <button id="submit-book">Submit Book</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Publishing Date</th>
-        </tr>
-      </thead>
-      <tbody id="bookTableBody"></tbody>
-    </table>
-    <br />
-    <hr />
-    <h2>Magazines</h2>
-
-    <input type="text" id="magazine-title" placeholder="Magazine Title" />
-    <input type="text" id="magazine-issue" placeholder="Issue Number" />
-    <input type="text" id="magazine-pages" placeholder="Pages" />
-    <button id="submit-magazine">Submit Magazine</button>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Issue Number</th>
-          <th>Pages</th>
-        </tr>
-      </thead>
-      <tbody id="magazineTableBody"></tbody>
-    </table>
+      <input type="text" id="magazine-title" placeholder="Magazine Title" />
+      <input type="text" id="magazine-issue" placeholder="Issue Number" />
+      <input type="text" id="magazine-pages" placeholder="Pages" />
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        id="submit-magazine"
+      >
+        Submit Magazine
+      </button>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Issue Number</th>
+              <th>Pages</th>
+            </tr>
+          </thead>
+          <tbody id="magazineTableBody"></tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>

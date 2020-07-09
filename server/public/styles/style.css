@@ -9,14 +9,21 @@ td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 body {
-  background-image: url('typewriter.jpg');
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(237, 202, 190);
+}
+.backgroundImage {
+  background-image: url('books-image.jpg');
   background-size: cover;
   background-position: center center;
-  margin: 30px;
-  opacity: 0.7;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.bookstoreTitle {
+  text-align: center;
+}
+.bodyContainer {
+  margin: 15px;
 }
