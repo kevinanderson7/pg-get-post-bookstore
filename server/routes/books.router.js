@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const pg = require('pg');
+const pool = require('../modules/pool');
+// const Pool = pg.Pool;
 
-const Pool = pg.Pool;
-
-const pool = new Pool({
-  database: 'bookstore',
-  host: 'localhost',
-  port: 5432,
-  max: 10,
-  idleTimeoutMillis: 30000,
-});
+// const pool = new Pool({
+//   database: 'bookstore',
+//   host: 'localhost',
+//   port: 5432,
+//   max: 10,
+//   idleTimeoutMillis: 30000,
+// });
 
 router.get('/', (req, res) => {
   console.log('In /books GET');
